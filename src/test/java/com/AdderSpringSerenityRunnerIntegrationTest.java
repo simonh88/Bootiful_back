@@ -5,8 +5,10 @@ import net.thucydides.core.annotations.Steps;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.test.context.ContextConfiguration;
 
 @RunWith(SpringIntegrationSerenityRunner.class)
+@ContextConfiguration(locations = "classpath:adder-beans.xml")
 public class AdderSpringSerenityRunnerIntegrationTest {
     @Steps
     private AdderServiceSteps adderSteps;
@@ -15,6 +17,6 @@ public class AdderSpringSerenityRunnerIntegrationTest {
     public void givenNumber_whenAdd_thenSummedUp() {
         adderSteps.getGivenNumber();
         adderSteps.whenAdd(adder);
-        adderSteps.thenSummedUp();
+        adderSteps.summedUp();
     }
 }

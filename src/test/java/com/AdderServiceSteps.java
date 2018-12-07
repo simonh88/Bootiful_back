@@ -2,13 +2,14 @@ package com;
 
 import com.bootiful.services.AdderService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.ContextConfiguration;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotEquals;
 
 
-@ContextConfiguration(classes = AdderService.class)
+@SpringBootTest(classes = AdderService.class)
 public class AdderServiceSteps {
     @Autowired
     private AdderService adderService;

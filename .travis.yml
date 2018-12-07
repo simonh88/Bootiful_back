@@ -5,6 +5,6 @@ branches:
   only:
     - master
 script:
-  - "mvn clean install -B"
+  - "./mvnw clean install -B"
 after_deploy:
   - echo "done deploying"

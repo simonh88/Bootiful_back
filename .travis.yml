@@ -1,10 +1,12 @@
-
 language: java
 jdk: oraclejdk8
 branches:
   only:
-    - master
+  - master
 script:
-  - "./mvnw clean install -B"
+- "./mvnw clean install -B"
 after_deploy:
-  - echo "done deploying"
+- echo "done deploying"
+env:
+  global:
+    secure: MkuohYObSuy3OyZsTCKYhaAQGleBWceLlNNKYHzmepvJ54NQlIZQtO3KKctlcduPp5WmL0UtBLWIILynqLmwN6V6NtIsTwhzbfbC/a+abFwFAdn1FJW/4o1stP17wKAbVBMJ/O3GYmGbt+npVUlqUMCSLGewCPhJSM7tdwfia0TULdJ22yJgSPVrv5iKv69Pu7nR0d9JC0cc1tK/71rXfWhZ677kntD4nf724ZJyM+QnNzP1ogqna31HSJ4Rj5pa57BNtOwR6rZBSsRAyJl+5KfD+CSMRxXvx6Ucz1KX7boQ7vG4m4mAOwQsBzR9kegRbMKeesg6wzc06uuM/st/l8RPuKx3SJvLH1ycoDm3fMdwCicvZyhBAmr7ubvny+cbcQ04Bzcjh+d/E3PEF1lMio0Nt808xnY1Bi3FHHH5D/5AslaHyzzivtsicMxUxtXSEg/G2AjPgTe32VSXdVHXpBFcpEwEj1MV1qroNupJDlRKJF8Oi4RO66rNmOgjDBWMNdbI44YA1fghFIjcGlrN5u0268/rKto+NzzBhx+jG2uMFhw2oRaqnu/BNI4taODUUr/ob+hfr/E+xUOU65/5ePuA7cLyLHdJ69XeeUbiCTx5AclOB2VHdWAz2vdMTZgT4UWJ6OkOAvHQF9UpexzxsJyGzeYBieljJQXfMW1CBr4=

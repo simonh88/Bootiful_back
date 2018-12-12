@@ -4,7 +4,10 @@ import com.bootiful.services.AdderService;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
 
-@RequestMapping(value = "/adder", produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
+import javax.validation.Valid;
+
+@CrossOrigin(origins = "http://localhost:4200")
+@RequestMapping(value = "api/adder", produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
 @RestController
 public class AdderController {
 
@@ -15,17 +18,21 @@ public class AdderController {
     }
 
     @GetMapping("/current")
+    @CrossOrigin(origins = "http://localhost:4200")
     public int currentNum() {
         return adderService.currentBase();
     }
 
     @GetMapping("/generate")
+    @CrossOrigin(origins = "http://localhost:4200")
     public int generateNum() {
         return adderService.generateBase();
     }
 
     @PostMapping
-    public int add(@RequestParam int num) {
-        return adderService.add(num);
+    @CrossOrigin(origins = "http://localhost:4200")
+    public int add(@RequestBody @Valid int numberToAdd)
+    {
+        return adderService.add(numberToAdd);
     }
 }
